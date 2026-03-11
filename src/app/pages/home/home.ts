@@ -1,9 +1,11 @@
 import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
+import { Header } from '../../components/header/header';
+import { Footer } from '../../components/footer/footer';
 
 @Component({
   selector: 'app-home',
-  imports: [NgFor],
+  imports: [NgFor, Header, Footer],
   templateUrl: './home.html',
 })
 export class Home {
