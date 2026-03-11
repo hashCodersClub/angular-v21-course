@@ -1,14 +1,40 @@
-<header class="bg-orange-300 flex justify-between items-center px-25 py-5">
-  <div>
-    <h1 class="text-3xl font-semibold">
-      {{ logoText }}
-    </h1>
+<header class="bg-white shadow-md">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <a routerLink="/" class="text-2xl font-bold text-blue-600"> ShopEasy </a>
+
+    <!-- Navigation -->
+    <nav class="hidden md:flex space-x-6 font-medium text-gray-700">
+      <a routerLink="/" class="hover:text-blue-600">Home</a>
+      <a routerLink="/products" class="hover:text-blue-600">Products</a>
+      <a routerLink="/login" class="hover:text-blue-600">Login</a>
+      <a routerLink="/register" class="hover:text-blue-600">Register</a>
+    </nav>
+
+    <!-- Cart -->
+    <div class="flex items-center space-x-4">
+      <button class="relative">
+        <!-- Cart Icon -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 text-gray-700 hover:text-blue-600"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.5 6h13M7 13L5.4 5M10 21a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z"
+          />
+        </svg>
+
+        <!-- Cart Count -->
+        <span class="absolute -top-2 -right-2 bg-blue-600 text-white text-xs px-1 rounded-full">
+          2
+        </span>
+      </button>
+    </div>
   </div>
-  <nav class="flex gap-5">
-    @for (navItem of navList; track navItem) {
-      <a href="">
-        {{ navItem }}
-      </a>
-    }
-  </nav>
 </header>

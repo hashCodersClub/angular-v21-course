@@ -1,1 +1,34 @@
-<p>products works!</p>
+<div class="min-h-screen bg-gray-100 p-8">
+  <!-- Page Title -->
+  <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center">Our Products</h1>
+
+  <!-- Products Grid -->
+  <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div
+      *ngFor="let product of products"
+      class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300"
+    >
+      <!-- Product Image -->
+      <img [src]="product.image" alt="product" class="w-full h-48 object-cover" />
+
+      <!-- Product Details -->
+      <div class="p-4">
+        <h2 class="text-lg font-semibold text-gray-800">
+          {{ product.name }}
+        </h2>
+
+        <p class="text-gray-600 text-sm mt-1">
+          {{ product.description }}
+        </p>
+
+        <div class="flex items-center justify-between mt-4">
+          <span class="text-xl font-bold text-blue-600"> ₹ {{ product.price }} </span>
+
+          <button class="bg-blue-600 text-white px-3 py-1 rounded-lg hover:bg-blue-700 transition">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
