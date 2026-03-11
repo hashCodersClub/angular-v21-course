@@ -1,0 +1,78 @@
+<div class="min-h-screen bg-gray-100 p-8">
+  <!-- Page Title -->
+  <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center">Your Cart</h1>
+
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Cart Items -->
+    <div class="md:col-span-2 space-y-4">
+      <div
+        *ngFor="let item of cartItems"
+        class="bg-white rounded-xl shadow-md p-4 flex items-center justify-between"
+      >
+        <!-- Product Info -->
+        <div class="flex items-center space-x-4">
+          <img [src]="item.image" alt="product" class="w-24 h-24 object-cover rounded-lg" />
+          <div>
+            <h2 class="text-lg font-semibold text-gray-800">{{ item.name }}</h2>
+            <p class="text-gray-600 text-sm">{{ item.description }}</p>
+            <p class="text-blue-600 font-bold mt-1">₹ {{ item.price }}</p>
+          </div>
+        </div>
+
+        <!-- Quantity Controls -->
+        <div class="flex items-center space-x-2">
+          <button
+            (click)="decreaseQuantity(item)"
+            class="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300"
+          >
+            -
+          </button>
+          <span class="w-6 text-center">{{ item.quantity }}</span>
+          <button
+            (click)="increaseQuantity(item)"
+            class="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300"
+          >
+            +
+          </button>
+        </div>
+
+        <!-- Remove Button -->
+        <button (click)="removeItem(item)" class="text-red-600 hover:text-red-800">Remove</button>
+      </div>
+
+      <!-- Empty Cart Message -->
+      <div *ngIf="cartItems.length === 0" class="text-center text-gray-600 mt-10">
+        Your cart is empty.
+      </div>
+    </div>
+
+    <!-- Order Summary -->
+    <div class="bg-white rounded-xl shadow-md p-6">
+      <h2 class="text-xl font-semibold text-gray-800 mb-4">Order Summary</h2>
+
+      <div class="flex justify-between text-gray-600 mb-2">
+        <span>Subtotal</span>
+        <span>₹ {{ getSubtotal() }}</span>
+      </div>
+
+      <div class="flex justify-between text-gray-600 mb-2">
+        <span>Tax (5%)</span>
+        <span>₹ {{ getTax() }}</span>
+      </div>
+
+      <div class="border-t my-2"></div>
+
+      <div class="flex justify-between text-lg font-bold mb-4">
+        <span>Total</span>
+        <span>₹ {{ getTotal() }}</span>
+      </div>
+
+      <button
+        class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+        (click)="checkout()"
+      >
+        Proceed to Checkout
+      </button>
+    </div>
+  </div>
+</div>

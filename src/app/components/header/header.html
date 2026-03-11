@@ -5,36 +5,47 @@
 
     <!-- Navigation -->
     <nav class="hidden md:flex space-x-6 font-medium text-gray-700">
-      <a routerLink="/" class="hover:text-blue-600">Home</a>
-      <a routerLink="/products" class="hover:text-blue-600">Products</a>
-      <a routerLink="/auth/login" class="hover:text-blue-600">Login</a>
-      <a routerLink="/auth/register" class="hover:text-blue-600">Register</a>
+      <a
+        routerLinkActive="text-blue-600"
+        [routerLinkActiveOptions]="{ exact: true }"
+        routerLink="/"
+        class="hover:text-blue-600"
+        >Home</a
+      >
+      <a routerLinkActive="text-blue-600" routerLink="/products" class="hover:text-blue-600"
+        >Products</a
+      >
+      <a routerLink="/cart" class="hover:text-blue-600"
+        ><button class="relative">
+          <!-- Cart Icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 text-gray-700 hover:text-blue-600"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.5 6h13M7 13L5.4 5M10 21a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z"
+            />
+          </svg>
+
+          <!-- Cart Count -->
+          <span class="absolute -top-2 -right-2 bg-blue-600 text-white text-xs px-1 rounded-full">
+            2
+          </span>
+        </button></a
+      >
     </nav>
 
     <!-- Cart -->
     <div class="flex items-center space-x-4">
-      <button class="relative">
-        <!-- Cart Icon -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6 text-gray-700 hover:text-blue-600"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.5 6h13M7 13L5.4 5M10 21a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z"
-          />
-        </svg>
-
-        <!-- Cart Count -->
-        <span class="absolute -top-2 -right-2 bg-blue-600 text-white text-xs px-1 rounded-full">
-          2
-        </span>
-      </button>
+      <a routerLink="/auth/login" class="hover:text-blue-600"
+        ><i class="fa-solid fa-lock"></i> Login</a
+      >
     </div>
   </div>
 </header>

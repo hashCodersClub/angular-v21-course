@@ -9,6 +9,7 @@
 1.  path
 2.  component
 3.  redirectTo
+4.  children
 
 ### Nested Routing
 
