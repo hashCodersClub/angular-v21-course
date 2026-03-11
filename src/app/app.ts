@@ -1,11 +1,10 @@
 import { Component, signal } from '@angular/core';
-import { Header } from './header/header';
-import { Footer } from './footer/footer';
-import { Counter } from './counter/counter';
-
+import { Header } from './components/header/header';
+import { Footer } from './components/footer/footer';
+import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
-  imports: [Header, Footer, Counter],
+  imports: [Header, Footer, RouterOutlet],
   templateUrl: './app.html',
 })
 export class App {

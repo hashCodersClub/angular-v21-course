@@ -1,0 +1,14 @@
+<header class="bg-orange-300 flex justify-between items-center px-25 py-5">
+  <div>
+    <h1 class="text-3xl font-semibold">
+      {{ logoText }}
+    </h1>
+  </div>
+  <nav class="flex gap-5">
+    @for (navItem of navList; track navItem) {
+      <a href="">
+        {{ navItem }}
+      </a>
+    }
+  </nav>
+</header>
