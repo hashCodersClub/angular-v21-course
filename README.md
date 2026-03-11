@@ -9,3 +9,9 @@
 1.  path
 2.  component
 3.  redirectTo
+
+### Nested Routing
+
+1.  create layout folder
+2.  create every component that will be representing a layout in layouts folder
+3.

@@ -5,7 +5,7 @@ import { Footer } from '../../components/footer/footer';
 
 @Component({
   selector: 'app-home',
-  imports: [NgFor, Header, Footer],
+  imports: [NgFor],
   templateUrl: './home.html',
 })
 export class Home {
